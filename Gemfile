@@ -8,6 +8,8 @@ gem 'pry'
 gem 'pry-doc'
 gem 'pry-rails'
 gem 'spring-commands-rspec'
+gem 'devise'
+gem 'activeadmin'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.3', '>= 6.0.3.4'
