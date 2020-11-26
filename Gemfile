@@ -10,6 +10,8 @@ gem 'pry-rails'
 gem 'spring-commands-rspec'
 gem 'devise'
 gem 'activeadmin'
+gem 'foundation-rails'
+gem 'autoprefixer-rails'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.3', '>= 6.0.3.4'
