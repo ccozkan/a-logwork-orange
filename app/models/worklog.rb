@@ -1,0 +1,2 @@
+class Worklog < ApplicationRecord
+end
