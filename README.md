@@ -2,9 +2,9 @@
 
 On this app,
 
-* users can register and see their worklog.
+* users can register,  save new work log, and see previous ones
 
-* admin users can see all users, worklogs and sort or filter w.r.t. their attributes
+* admin users can see all users, work logs and sort or filter w.r.t. their attributes
 
 Check live version at [https://a-logwork-orange.herokuapp.com](https://a-logwork-orange.herokuapp.com)
 
@@ -21,3 +21,15 @@ and run via
 ### Tests
 
 ``` bundle exec rspec ```
+
+### demo credentials
+#### admin
+username: admin@example.com
+password: password
+
+#### user
+username: clarkkent@superman.com or peterparker@spiderman.com or brucewayne@batman.com
+password: 123456
+
+
+
