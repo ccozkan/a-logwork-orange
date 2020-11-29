@@ -4,4 +4,10 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   has_many :worklogs, dependent: :destroy
+
+  def total_worklog_duration_in_minutes
+    return 0 if worklogs.blank?
+
+    total_minutes = worklogs.map(&:duration_in_minutes).sum
+  end
 end
