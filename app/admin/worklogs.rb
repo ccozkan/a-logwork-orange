@@ -4,11 +4,11 @@ ActiveAdmin.register Worklog do
   index do
     selectable_column
     id_column
-    column :user do |resource|
+    column :user_email do |resource|
       link_to resource.user.email, admin_user_path(resource.user.id)
     end
-    column :starting_at
     column :user_id
+    column :starting_at
     column :ending_at
     column :time_type do |resource|
       resource.time_type.humanize.upcase

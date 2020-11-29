@@ -1,5 +1,6 @@
 ActiveAdmin.register User do
   actions :all, except: [:edit, :new, :create]
+  config.filters = false
 
   index do
     id_column
