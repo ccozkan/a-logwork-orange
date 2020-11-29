@@ -1,0 +1,17 @@
+%ul.menu.expanded.text-center{style: 'background-color: orange; font-weight: bold;'}
+  %li
+    %a{:href => "/"} A LOGWORK ORANGE
+  - if current_user
+    %li
+      = link_to 'BOARD', worklogs_path
+    %li
+      = link_to 'SIGN OUT', destroy_user_session_path, method: :delete
+  - else
+    %li
+      = link_to 'sign up', new_user_registration_path
+    %li
+      = link_to 'sign in', new_user_session_path
+  %li
+    %a{:href => "/about"} ABOUT
+
+%hr/
