@@ -23,13 +23,13 @@ default: &default
 
 development:
   <<: *default
-  database: logwork_orange_development
+  database: a_logwork_orange_development
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
   # When left blank, postgres will use the default role. This is
   # the same name as the operating system user that initialized the database.
-  #username: logwork_orange
+  #username: a_logwork_orange
 
   # The password associated with the postgres role (username).
   #password:
@@ -57,7 +57,7 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: logwork_orange_test
+  database: a_logwork_orange_test
 
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -80,6 +80,6 @@ test:
 #
 production:
   <<: *default
-  database: logwork_orange_production
-  username: logwork_orange
-  password: <%= ENV['LOGWORK_ORANGE_DATABASE_PASSWORD'] %>
+  database: a_logwork_orange_production
+  username: a_logwork_orange
+  password: <%= ENV['a_logwork_orange_DATABASE_PASSWORD'] %>

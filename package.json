@@ -1,5 +1,5 @@
 {
-  "name": "logwork_orange",
+  "name": "a_logwork_orange",
   "private": true,
   "dependencies": {
     "@rails/actioncable": "^6.0.0",
