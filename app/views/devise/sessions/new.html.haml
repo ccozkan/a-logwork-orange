@@ -1,7 +1,10 @@
+= render 'shared/menu'
+
 .row
-  .columns.small-7.small-centered
+  .columns.small-4.small-centered
     .text-center
       %h2 log in
+      %hr/
       = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
         .field
           = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: 'email'
