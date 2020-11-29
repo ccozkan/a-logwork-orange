@@ -5,11 +5,11 @@ ruby '2.7.2'
 
 gem 'devise'
 gem 'activeadmin'
+gem 'active_admin_datetimepicker'
+gem 'activeadmin-searchable_select'
 gem 'foundation-rails'
 gem 'autoprefixer-rails'
 gem 'haml'
-gem 'active_admin_datetimepicker', '~> 0.1.0'
-gem 'activeadmin-searchable_select', '~> 1.2'
 gem 'rename'
 gem 'coffee-rails'
 
