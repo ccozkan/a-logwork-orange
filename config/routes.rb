@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   get 'pages/welcome'
   get 'about', to: 'pages#about'
-  resources :worklogs, only: [:index]
+  resources :worklogs, only: [:index, :create]
 
   root to: 'pages#welcome'
 end
