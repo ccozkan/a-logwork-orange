@@ -3,16 +3,15 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.7.2'
 
-gem 'rubocop'
-gem 'pry'
-gem 'pry-doc'
-gem 'pry-rails'
-gem 'spring-commands-rspec'
 gem 'devise'
 gem 'activeadmin'
 gem 'foundation-rails'
 gem 'autoprefixer-rails'
 gem 'haml'
+gem 'active_admin_datetimepicker', '~> 0.1.0'
+gem 'activeadmin-searchable_select', '~> 1.2'
+gem 'rename'
+gem 'coffee-rails'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.3', '>= 6.0.3.4'
@@ -43,6 +42,12 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'rspec-rails', '~> 4.0.1'
+  gem 'factory_bot_rails'
+  gem 'rubocop'
+  gem 'pry'
+  gem 'pry-doc'
+  gem 'pry-rails'
+  gem 'spring-commands-rspec'
 end
 
 group :development do
