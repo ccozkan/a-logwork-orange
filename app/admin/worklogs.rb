@@ -1,5 +1,5 @@
 ActiveAdmin.register Worklog do
-  actions :all, except: [:edit, :destroy, :new, :create]
+  actions :index, :show
 
   index do
     selectable_column
@@ -16,8 +16,7 @@ ActiveAdmin.register Worklog do
     actions
   end
 
-  filter :email
-  filter :'user', as: :searchable_select, multiple: true, collection: proc { User.all.map(&:email) }
+  filter :'user', as: :searchable_select, multiple: true, collection: proc { User.all.map(&:id) }
   filter :starting_at, as: :date_time_range
   filter :ending_at, as: :date_time_range
 

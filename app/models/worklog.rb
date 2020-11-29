@@ -10,7 +10,7 @@ class Worklog < ApplicationRecord
   def consistency_of_time_interval
     return if starting_at.nil? && ending_at.nil? || ending_at > starting_at
 
-    errors.add(:ending_at, 'ending_at must be greater than starting_at')
+    errors.add(:ending_at, 'must be greater than starting_at')
   end
 
   def duration_in_minutes
