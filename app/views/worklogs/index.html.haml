@@ -1,4 +1,16 @@
-= render 'shared/menu'
+
+%script{:src => "https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"}
+%script{:src => "http://foundation-datepicker.peterbeno.com/js/foundation-datepicker.js"}
+
+:javascript
+  $(function(){
+    $('.pick_datetime').fdatepicker({
+      format: 'yyyy/MM/dd hh:ii',
+      disableDblClickSelection: true,
+      language: 'vi',
+      pickTime: true
+    });
+  });
 
 .row
   .columns.small-7.small-centered
@@ -6,16 +18,35 @@
       %h3{style: 'font-family: monospace;'}
         You have worked
       %h2{style: 'font-family: monospace;'}
-        !
-        = distance_of_time_in_words(current_user.total_worklog_duration_in_minutes).upcase
-        !
+        = distance_of_time_in_words(current_user.total_worklog_duration_in_minutes * 60).upcase
+        %br
+        in
+        %br
+        = current_user.worklogs.size
+        sessions
         %hr/
 .row
   .columns.small-7.small-centered
+    %h4 add new worklog
+    = form_for Worklog.new do |f|
+      .columns.small-6
+        = f.text_field :starting_at, placeholder: 'starting_at', class: 'pick_datetime'
+      .columns.small-6
+        = f.text_field :ending_at, placeholder: 'starting_at', class: 'pick_datetime'
+      .columns.small-6
+        = f.select :time_type, ['self_improvement', 'dayjob', 'side_project']
+      .columns.small-6
+        = f.text_field :remark, placeholder: 'remarks'
+      .columns.small-12
+        = f.submit 'Submit', class: 'button'
+
+    %hr/
+.row
+  .columns.small-7.small-centered
+    %h4 previous worklogs
     %table
       %thead
         %tr
-          %th
           %th type
           %th duration
           %th start time
@@ -23,8 +54,6 @@
           %th remark
           - @worklogs.each do |w|
             %tr
-              %td
-                = link_to '[X]', worklog_path(w.id), method: :delete
               %td
                 = w.time_type.humanize.downcase
               %td
