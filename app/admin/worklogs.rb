@@ -17,7 +17,7 @@ ActiveAdmin.register Worklog do
   end
 
   filter :email
-  filter :'user', as: :searchable_select, multiple: true, collection: User.all.map(&:email)
+  filter :'user', as: :searchable_select, multiple: true, collection: proc { User.all.map(&:email) }
   filter :starting_at, as: :date_time_range
   filter :ending_at, as: :date_time_range
 
