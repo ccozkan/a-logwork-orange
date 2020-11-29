@@ -1,24 +1,23 @@
-# README
+# A LOGWORK ORANGE
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+On this app,
 
-Things you may want to cover:
+* users can register and see their worklog.
 
-* Ruby version
+* admin users can see all users, worklogs and sort or filter w.r.t. their attributes
 
-* System dependencies
+Check live version at [https://a-logwork-orange.herokuapp.com](https://a-logwork-orange.herokuapp.com)
 
-* Configuration
+### Installation and Run
 
-* Database creation
+In order to run it your localhost
 
-* Database initialization
+``` bundle && rails db:create && rails db:migrate && rails db:seed ```
 
-* How to run the test suite
+and run via
 
-* Services (job queues, cache servers, search engines, etc.)
+``` rails s ```
 
-* Deployment instructions
+### Tests
 
-* ...
+``` bundle exec rspec ```
