@@ -15,7 +15,8 @@ RSpec.describe Worklog, type: :model do
         it do
           worklog.ending_at = Time.current - 1.hour
           expect(worklog.valid?).to eq false
-          expect(worklog.errors.messages.values).to include ['ending_at must be greater than starting_at']
+          expect(worklog.errors.messages.values).to include ['must be greater than starting_at']
+          expect(worklog.errors.messages.size).to eq 1
         end
       end
       context 'valid' do
