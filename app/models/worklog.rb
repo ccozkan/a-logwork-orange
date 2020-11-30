@@ -7,6 +7,9 @@ class Worklog < ApplicationRecord
 
   enum time_type: [ :self_improvement, :dayjob, :side_project ]
 
+  scope :of_last_week, -> { where("starting_at > ?", Date.today.last_week )}
+  scope :of_last_month, -> { where("starting_at > ?", Date.today.last_month )}
+
   def consistency_of_time_interval
     return if starting_at.nil? && ending_at.nil? || ending_at > starting_at
 

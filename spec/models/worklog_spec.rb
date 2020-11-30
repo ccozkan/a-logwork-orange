@@ -26,6 +26,22 @@ RSpec.describe Worklog, type: :model do
         end
       end
     end
+
+    describe 'scopes' do
+      let!(:worklog_1) { FactoryBot.create(:worklog, user_id: user.id, time_type: 1, starting_at: Time.current - 50.minutes) }
+      let!(:worklog_2) { FactoryBot.create(:worklog, user_id: user.id, time_type: 1, starting_at: Time.current.last_week - 1.day) }
+      let!(:worklog_3) { FactoryBot.create(:worklog, user_id: user.id, time_type: 1, starting_at: Time.current.last_month - 1.day)}
+
+      it 'of_last_month' do
+        expect(Worklog.of_last_month).to include worklog_1, worklog_2
+        expect(Worklog.of_last_month).not_to include worklog_3
+      end
+
+      it 'of_last_week' do
+        expect(Worklog.of_last_week).to include worklog_1
+        expect(Worklog.of_last_week).not_to include worklog_2, worklog_3
+      end
+    end
   end
 
   describe '#duration_in_minutes' do
