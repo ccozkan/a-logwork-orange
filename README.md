@@ -10,7 +10,7 @@ On this app,
 	* sort or filter w.r.t. their attributes
 	* see total work log time (all-time, last week, last month) for each users
 
-Check live version at [https://a-logwork-orange.herokuapp.com](https://a-logwork-orange.herokuapp.com)
+Feel free to check live version at [https://a-logwork-orange.herokuapp.com](https://a-logwork-orange.herokuapp.com). You can use the credentials down below, if you don't feel like sign-up and all:)
 
 ### Installation and Run
 
