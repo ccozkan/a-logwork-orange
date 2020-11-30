@@ -1,19 +1,8 @@
-
 %script{:src => "https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"}
 %script{:src => "https://cdnjs.cloudflare.com/ajax/libs/foundation-datepicker/1.5.6/js/foundation-datepicker.min.js"}
 
-:javascript
-  $(function(){
-    $('.pick_datetime').fdatepicker({
-      format: 'yyyy/MM/dd hh:ii',
-      disableDblClickSelection: true,
-      language: 'vi',
-      pickTime: true
-    });
-  });
-
 .row
-  .columns.small-7.small-centered
+  .columns.small-12.small-centered.large-7.large-centered
     .text-center{style: 'font-family: monospace;'}
       %h3{style: 'font-family: monospace;'}
         You have worked
@@ -26,7 +15,7 @@
         sessions
         %hr/
 .row
-  .columns.small-7.small-centered
+  .columns.small-12.small-centered.large-7.large-centered
     %h4 add new worklog
     = form_for Worklog.new do |f|
       .columns.small-6
@@ -42,7 +31,7 @@
 
     %hr/
 .row
-  .columns.small-7.small-centered
+  .columns.small-12.small-centered.large-7.large-centered
     %h4 previous worklogs
     %table
       %thead
@@ -64,3 +53,13 @@
                 = w.ending_at.strftime("%b %d, %Y, %a %H:%M")
               %td
                 = w.remark.present? ? w.remark : 'n/a'
+
+:javascript
+  $(function(){
+    $('.pick_datetime').fdatepicker({
+      format: 'yyyy/MM/dd hh:ii',
+      disableDblClickSelection: true,
+      language: 'vi',
+      pickTime: true
+    });
+  });
