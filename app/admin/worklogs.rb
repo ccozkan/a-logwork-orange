@@ -21,7 +21,7 @@ ActiveAdmin.register Worklog do
   scope :all
 
   filter :'user', as: :searchable_select, multiple: true, collection: proc { User.all.map{ |u| [u.email, u.id] } }
-  filter :'time_type', as: :searchable_select, multiple: true, collection: proc { Worklog.time_types.keys }
+  filter :'time_type', as: :searchable_select, multiple: true, collection: proc { Worklog.time_types }
   filter :starting_at, as: :date_time_range
   filter :ending_at, as: :date_time_range
 
